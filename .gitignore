@@ -1,0 +1,7 @@
+*.las
+*.csv
+*.xlsx
+*.gtx
+*.tif
+*.tif.aux.xml
+odisha/

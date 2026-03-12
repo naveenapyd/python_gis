@@ -1,0 +1,28 @@
+
+{
+    "pipeline": [
+        {
+            "type": "readers.las",
+            "filename": "D:/work/coord_transform/input_pcl_ellip.las"
+        },
+        {
+            "type": "filters.reprojection",
+            "in_srs": "EPSG:32645", 
+            "out_srs": "EPSG:4326"
+        },
+        {
+            "type": "filters.reprojection",
+            "in_srs": "EPSG:4979", 
+            "out_srs": "EPSG:9518"
+        },
+        {
+            "type": "filters.reprojection",
+            "in_srs": "EPSG:4326", 
+            "out_srs": "EPSG:32645"
+        },
+        {
+            "type": "writers.las",
+            "filename": "D:/work/coord_transform/output_orthometric.las"
+        }
+    ]
+}
