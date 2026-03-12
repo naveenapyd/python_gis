@@ -1,18 +1,18 @@
 
-# Reprojection of elevation values from ellipsoidal to orthometric:
+# Reprojection of elevation values from ellipsoidal to orthometric
 
 ## Setup
 
-### For a set of points stored in an excel:
+### For a set of points stored in an excel
 
 Install following libraries:
-```bash
+```
 pip install pandas
 # OR
 conda install pandas
 ```
 
-```bash
+```
 pip install pyproj
 # OR
 conda install pyproj
@@ -20,22 +20,22 @@ conda install pyproj
 
 Run `F5` on [coord_transform_excel.py](./coord_transform_excel.py)
 
-### For a point cloud (.las):
+### For a point cloud (.las)
 
 Install GDAL
-```bash
+```
 conda install gdal
 ```
 
 Install [PDAL python bindings](https://pdal.io/en/2.8.4/python.html) in conda, which also installs the base PDAL library automatically
 
 Install in existing environment other than base:
-```bash
+```
 conda install -n <environment name> -c conda-forge python-pdal
 ```
 
 To create a new environment and install pdal in it, use:
-```bash
+```
 conda create -n <environment name> -c conda-forge python-pdal
 conda activate <environment name>
 ```
