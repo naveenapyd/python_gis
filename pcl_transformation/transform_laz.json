@@ -1,0 +1,49 @@
+{
+    "pipeline": [
+        {
+            "type": "readers.las",
+            "filename": "path/to/your/file/Tile_1.laz",
+            "tag": "Tile_1"
+        },
+        {
+            "type": "readers.las",
+            "filename": "path/to/your/file/Tile_2.laz",
+            "tag": "Tile_2"
+        },
+        {
+            "type": "readers.las",
+            "filename": "path/to/your/file/Tile_3.laz",
+            "tag": "Tile_3"
+        },
+        {
+            "type": "readers.las",
+            "filename": "path/to/your/file/Tile_4.laz",
+            "tag": "Tile_4"
+        },
+        {
+            "type": "readers.las",
+            "filename": "path/to/your/file/Tile_5.laz",
+            "tag": "Tile_5"
+        },
+        {
+            "type": "filters.reprojection",
+            "inputs": ["Tile_1", "Tile_2", "Tile_3", "Tile_4", "Tile_5"],
+            "in_srs": "EPSG:4978", 
+            "out_srs": "EPSG:32643",
+            "tag": "Reproject_43N"
+        },
+	    {
+            "type": "writers.las",
+            "inputs": ["Reproject_43N"],
+            "minor_version": 4,
+            "dataformat_id": 7,
+            "offset_x": "auto",
+            "offset_y": "auto",
+            "offset_z": "auto",
+            "scale_x": 0.0001,
+            "scale_y": 0.0001,
+            "scale_z": 0.0001,
+            "filename": "path/to/your/folder/Output.laz"
+        }
+    ]
+}
